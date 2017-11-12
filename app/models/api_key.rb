@@ -13,7 +13,8 @@
 require 'digest'
 
 class ApiKey < ApplicationRecord
-    validates :email, presence: true
+    validates :email, presence: true, uniqueness: true
+    validates :key, uniqueness: true
     before_create :init
     after_create :generate_key
 

@@ -1,5 +1,4 @@
-$(document).ready(function() {
-
+document.addEventListener("turbolinks:load", function () {
     function init(){
         $('#input_api_key').val('');
         $('#div_container_result').hide();
@@ -87,6 +86,7 @@ $(document).ready(function() {
 
                 if(data.status == 'success'){
                     $('#div_container_result').show();
+                    $('#tb_result').empty();
                     var duplicates = data.duplicates;
 
                     for(i = 0; i < duplicates.length; i++){
