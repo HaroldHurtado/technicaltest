@@ -1,11 +1,23 @@
 <h1>Form duplicate</h1>
 <label>API Key</label>
 <input type="text" id="input_api_key"></input>
-<div>
-    <input type="text" id="input_string_0"></input>
-    <input type="text" id="input_string_1"></input>
-    <input type="text" id="input_string_2"></input>
-    <input type="text" id="input_string_3"></input>
-    <input type="text" id="input_string_4"></input>
+<button id="btn_add_input">Add</button>
+<button id="btn_reset_input">Reset</button>
+<div id="div_container_input">
+
 </div>
 <button id="btn_show_duplicate">Show duplicate</button>
+
+<div id="div_container_result">
+    <table class="table">
+  <thead>
+    <tr>
+      <th>Word</th>
+      <th>Positions</th>
+    </tr>
+  </thead>
+  <tbody id="tb_result">
+
+  </tbody>
+</table>
+</div>

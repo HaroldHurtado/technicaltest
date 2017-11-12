@@ -65,6 +65,42 @@ class ApiKeysController < ApplicationController
 
   end
 
+  def find_duplicates
+      api_key = params[:api_key]
+      data = params[:data]
+      data_uniq = data.uniq
+
+      duplicates = []
+
+      data_uniq.each do |string_item|
+          position = 0
+          positions = []
+
+          data.each do |string_item_children|
+              if string_item == string_item_children
+                  positions << position
+              end
+              position += 1
+          end
+
+          raw = {
+              word: string_item,
+              positions: positions.join(',')
+          }
+
+          logger.info raw
+          duplicates << raw
+      end
+
+      response_success = {
+          code: "200",
+          status: "success",
+          duplicates: duplicates
+      }
+
+      render json: response_success
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_api_key
