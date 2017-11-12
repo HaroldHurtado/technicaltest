@@ -8,27 +8,31 @@
   </head>
 
   <body>
-    <p class="navbar-text pull-right">
-    <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>.
-    <% end %>
-    </p>
-    <ul class="nav">
-        <% if user_signed_in? %>
-            <li class="active"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-        <% else %>
-            <li class="active"><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
-        <% end %>
-        <li class="active"><a href="/api_keys">APIKeys</a></li>
-        <li class="active"><a href="/api_keys/0/form_duplicate">Duplicates</a></li>
-    </ul>
-      <% if notice %>
-          <p class="alert alert-success"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-          <p class="alert alert-danger"><%= alert %></p>
-      <% end %>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <% if user_signed_in? %>
+                    Logged in as <strong><%= current_user.email %></strong>.
+                <% end %>
+            </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <% if user_signed_in? %>
+                    <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+                <% else %>
+                    <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+                <% end %>
+                <li><a href="/api_keys">APIKeys</a></li>
+                <li><a href="/api_keys/0/form_duplicate">Duplicates</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="col-md-12">
+        <div class="col-md-6 col-md-offset-3">
+            <%= yield %>
+        </div>
+    </div>
 
-    <%= yield %>
   </body>
 </html>

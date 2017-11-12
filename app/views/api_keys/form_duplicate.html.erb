@@ -1,23 +1,44 @@
 <h1>Form duplicate</h1>
-<label>API Key</label>
-<input type="text" id="input_api_key"></input>
-<button id="btn_add_input">Add</button>
-<button id="btn_reset_input">Reset</button>
-<div id="div_container_input">
 
+<div class="col-md-12 row">
+    <div class="col-md-2">
+        <label>API Key</label>
+    </div>
+    <div class="col-md-8">
+        <input type="text" id="input_api_key"></input>
+    </div>
 </div>
-<button id="btn_show_duplicate">Show duplicate</button>
+<div class="col-md-12">
+    <br/>
+    <div id="div_container_input">
+
+    </div>
+    <br/>
+</div>
+<div class="col-md-12 row">
+    <div class="col-md-3">
+        <button class=" btn btn-primary" id="btn_add_input">Add String</button>
+    </div>
+    <div class="col-md-3">
+        <button class=" btn btn-success" id="btn_show_duplicate">Show duplicate</button>
+    </div>
+
+    <div class="col-md-2">
+        <button class="btn btn-danger" id="btn_reset_input">Reset</button>
+    </div>
+</div>
 
 <div id="div_container_result">
-    <table class="table">
-  <thead>
-    <tr>
-      <th>Word</th>
-      <th>Positions</th>
-    </tr>
-  </thead>
-  <tbody id="tb_result">
+    <br/>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            <th>Word</th>
+            <th>Positions</th>
+            </tr>
+        </thead>
+        <tbody id="tb_result">
 
-  </tbody>
-</table>
+        </tbody>
+    </table>
 </div>

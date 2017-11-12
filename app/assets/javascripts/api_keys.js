@@ -105,7 +105,7 @@ document.addEventListener("turbolinks:load", function () {
     }
 
     $('#btn_add_input').click(function(){
-        $('#div_container_input').append("<div><input type='text'></input><button class'btn-remove'>Remove</button></div>");
+        $('#div_container_input').append("<div><input type='text'></input><button class='btn-remove btn btn-danger'>Remove</button></div>");
 
         $('#div_container_input > div > button').each(function() {
             $(this).click(function(){
