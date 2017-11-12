@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: api_keys
+#
+#  id         :integer          not null, primary key
+#  email      :string
+#  key        :string
+#  total_use  :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  key: MyString
+  total_use: 1
+
+two:
+  email: MyString
+  key: MyString
+  total_use: 1
