@@ -38,6 +38,9 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 
+# handle cors request
+gem 'rack-cors', :require => 'rack/cors'
+
 gem 'bootstrap', '~> 4.0.0.alpha3'
 
 
